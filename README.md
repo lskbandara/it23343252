@@ -1,187 +1,239 @@
-# SwiftTranslator Test Automation Suite
+<div align="center">
 
-This project contains automated tests for the SwiftTranslator Singlish to Sinhala conversion system using Playwright.
+# 🌍 Singlish Translator  
+### Playwright E2E Test Suite
 
-## Project Overview
+**Automated End-to-End Testing for  
+SwiftTranslator (Singlish → Sinhala)**
 
-This test suite validates the functionality of the SwiftTranslator web application by testing:
-- 24 positive functional scenarios
-- 10 negative functional scenarios  
-- 1 UI-related test scenario
+🚀 Built with **Playwright** | 🧪 Reliable | 🎯 UI-Focused
 
-## Prerequisites
+---
 
-Before running the tests, ensure you have the following installed:
-- Node.js (version 16 or higher)
-- npm (comes with Node.js)
+![Playwright](https://img.shields.io/badge/Tested%20With-Playwright-45ba4b?style=for-the-badge&logo=playwright)
+![Node](https://img.shields.io/badge/Node.js-16+-339933?style=for-the-badge&logo=node.js)
+![Status](https://img.shields.io/badge/Project-Active-success?style=for-the-badge)
+![License](https://img.shields.io/badge/Use-Educational-blue?style=for-the-badge)
 
-## Installation
+</div>
 
-### Step 1: Clone or Download the Repository
+---
 
-If you have the project as a zip file, extract it. If it's a Git repository:
+## 📌 Overview
+
+This repository contains a **professional-grade automated testing suite** for the  
+**SwiftTranslator Singlish → Sinhala web application**.
+
+It validates:
+
+- ✅ Translation accuracy  
+- 🎨 UI behavior  
+- 🧠 Edge cases & grammar scenarios  
+- 📊 Test reports & artifacts  
+
+Built for **academic evaluation and real-world QA practices**.
+
+---
+
+## ✨ Key Features
+
+✅ End-to-End (E2E) testing with Playwright  
+🌐 Singlish → Sinhala language coverage  
+🧪 Positive & negative functional scenarios  
+🎯 Real-time UI output validation  
+📊 HTML & JSON test reports  
+📸 Screenshots & videos on failures  
+
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone <repository-url>
-cd <project-directory>
+cd singlish-translator-playwright
 ```
 
-### Step 2: Install Dependencies
+### 2️⃣ Initialize Playwright
 
-Run the following command in the project root directory:
+```bash
+npm init playwright@latest
+```
+
+> 💡 **Recommended:** Choose **JavaScript**
+
+### 3️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Step 3: Install Playwright Browsers
-
-After installing dependencies, install the required browsers:
+### 4️⃣ Install Browsers
 
 ```bash
 npx playwright install chromium
 ```
 
-## Project Structure
+---
 
+## 🧪 Running Tests
+
+### ▶ Run All Tests
+
+```bash
+npx playwright test
 ```
-.
-├── swift-translator-tests.spec.js    # Main test file
-├── playwright.config.js              # Playwright configuration
-├── package.json                      # Project dependencies
-└── README.md                         # This file
-```
 
-## Running the Tests
-
-### Run All Tests
+or
 
 ```bash
 npm test
 ```
 
-### Run Tests in Headed Mode (visible browser)
+### 🛠 Helpful Commands
+
+| Command | Description |
+|------|------------|
+| `--headed` | Run with visible browser |
+| `--ui` | Interactive Playwright UI |
+| `--debug` | Debug mode |
+| `show-report` | Open HTML report |
 
 ```bash
-npm run test:headed
+npx playwright test --headed
+npx playwright test --ui
+npx playwright test --debug
+npx playwright show-report
 ```
 
-### Run Tests with UI Mode (interactive)
+---
 
-```bash
-npm run test:ui
+## 🗂️ Project Structure
+
+```
+├── swift-translator-tests.spec.js
+├── playwright.config.js
+├── package.json
+├── tests/
+│   └── example.spec.js
+├── test-results/
+│   ├── html-report/
+│   ├── artifacts/
+│   └── test-results.json
+├── Test_Cases_Template.xlsx
+├── README.md
+├── .gitignore
 ```
 
-### Run Tests in Debug Mode
+---
 
-```bash
-npm run test:debug
-```
+## ✅ Test Coverage
 
-### View Test Report
+### ✔ Positive Functional Tests
+- Sentence structures  
+- Questions & commands  
+- Tenses & negations  
+- Greetings  
+- Mixed language input  
+- Punctuation handling  
+- Numbers & currency  
 
-After running tests, view the HTML report:
+### ❌ Negative Functional Tests
+- Missing / multiple spaces  
+- Line breaks  
+- Slang & abbreviations  
+- Grammar errors  
+- Typos  
 
-```bash
-npm run report
-```
+### 🎨 UI Tests
+- Real-time translation updates  
 
-## Test Coverage
+---
 
-### Positive Functional Tests (24 scenarios)
-
-The test suite covers:
-- **Sentence Structures**: Simple, compound, and complex sentences
-- **Question Forms**: Various interrogative patterns
-- **Command Forms**: Direct and polite imperatives
-- **Tense Variations**: Past, present, and future tenses
-- **Negations**: Different negative sentence forms
-- **Greetings & Responses**: Common conversational patterns
-- **Mixed Language**: English terms embedded in Singlish
-- **Punctuation**: Special characters and formatting
-- **Numbers & Currency**: Numerical formats and currency
-
-### Negative Functional Tests (10 scenarios)
-
-Tests for robustness including:
-- Missing spaces between words
-- Multiple consecutive spaces
-- Line breaks in input
-- Informal slang expressions
-- Mixed language with formatting errors
-- Abbreviations and technical terms
-- Typographical errors
-
-### UI Test (1 scenario)
-
-- Real-time output update validation
-- Tests that translation appears dynamically as user types
-
-## Test Data Structure
+## 🗃️ Test Case Design
 
 Each test case includes:
-- **Test Case ID**: Unique identifier (e.g., Pos_Fun_001)
-- **Name**: Descriptive test name
-- **Input**: Singlish text to translate
-- **Expected Output**: Expected Sinhala translation
-- **Category**: Test category (e.g., Daily language usage)
-- **Grammar**: Grammar focus (e.g., Simple sentence)
-- **Length**: Input length type (S/M/L)
 
-## Configuration
+- **Test Case ID** (e.g., `Pos_Fun_001`)
+- **Test Name**
+- **Singlish Input**
+- **Expected Sinhala Output**
+- **Category**
+- **Grammar Type**
+- **Sentence Length**
 
-Test timeouts and settings can be modified in `playwright.config.js`:
-- Default timeout: 60 seconds
-- Expect timeout: 10 seconds
-- Retries: 0 (can be increased for flaky tests)
-- Workers: 1 (sequential execution)
+---
 
-## Troubleshooting
+## ⚙️ Configuration
 
-### Tests Failing
+Edit `playwright.config.js` to customize:
 
-1. **Network Issues**: Ensure stable internet connection
-2. **Site Changes**: Website structure may have changed - verify selectors
-3. **Timeout Errors**: Increase timeout values in config or test files
+- ⏱ Default timeout – **60s**
+- ⏳ Expect timeout – **10s**
+- 🔁 Retries – **0**
+- 👷 Workers – **1 (sequential)**
+- 🌐 Base application URL  
 
-### Installation Issues
+---
 
-1. **Node.js Version**: Ensure you're using Node.js 16+
-   ```bash
-   node --version
-   ```
+## 🛠 Troubleshooting
 
-2. **Clear Cache**: If having npm issues
-   ```bash
-   npm cache clean --force
-   npm install
-   ```
+### ❗ Tests Failing?
+- Check internet connection  
+- Verify UI changes  
+- Increase timeouts if required  
 
-### Browser Issues
+### 🟢 Node Version
 
-If Playwright browsers aren't working:
 ```bash
-npx playwright install --force chromium
+node --version
 ```
 
-## Test Results
+> Minimum: **Node.js 16+**
 
-Test results are saved in the `test-results/` directory:
-- HTML report: `test-results/html-report/`
-- JSON results: `test-results/test-results.json`
-- Screenshots/Videos: `test-results/artifacts/`
+### ♻ Fix NPM Issues
 
-## Notes
+```bash
+npm cache clean --force
+npm install
+```
 
-- Tests run sequentially (workers: 1) to avoid conflicts
-- Each test waits 2 seconds between executions for stability
-- Screenshots and videos are captured only on failure
-- All tests use the same base URL configured in `playwright.config.js`
+---
 
-## License
+## 📊 Reports & Artifacts
 
-This project is for educational purposes as part of IT3040 - ITPM assignment.
+📁 HTML Report → `test-results/html-report/`  
+📄 JSON Results → `test-results/test-results.json`  
+🎥 Screenshots & Videos → `test-results/artifacts/`  
 
-## Author
+---
 
-BSc (Hons) in Information Technology - Year 3 Student
+## ℹ️ Notes
+
+- Tests run **sequentially**
+- 2-second delay for stability
+- Screenshots/videos captured **on failure only**
+- Base URL set in config file
+
+---
+
+## 📝 License
+
+📚 **Educational Use Only**  
+**IT3040 – IT Project Management (ITPM)**
+
+---
+
+## 👤 Author
+
+🎓 **BSc (Hons) in Information Technology**  
+👨‍🎓 **Year 3 Undergraduate**
+
+---
+
+<div align="center">
+
+✨ *Designed for clean evaluation, clarity, and professionalism* ✨
+
+</div>
